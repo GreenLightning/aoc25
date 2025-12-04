@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"slices"
 	"strconv"
@@ -54,7 +53,7 @@ func readNumbers(filename string) []int {
 }
 
 func readFile(filename string) string {
-	bytes, err := ioutil.ReadFile(filename)
+	bytes, err := os.ReadFile(filename)
 	check(err)
 	return strings.TrimSpace(string(bytes))
 }
