@@ -76,6 +76,12 @@ func toInt(s string) int {
 	return result
 }
 
+func toInt64(s string) int64 {
+	result, err := strconv.ParseInt(s, 10, 64)
+	check(err)
+	return result
+}
+
 func check(err error) {
 	if err != nil {
 		panic(err)
